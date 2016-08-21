@@ -13,10 +13,8 @@ function J = computeCostMulti(X, y, theta)
 	% Instructions: Compute the cost of a particular choice of theta
 	%               You should set J to the cost.
 
-	prediction = X * theta;
-	squareErr = (prediction - y) .^ 2;
-
-	J = sum(squareErr) / (m * 2);
+	h_theta = X * theta;
+	J = (1/2*m) * sum((h_theta - y) .^ 2);
 
 	% =========================================================================
 

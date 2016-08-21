@@ -17,12 +17,10 @@ function [theta, J_history] = gradientDescent(X, y, theta, alpha, num_iters)
         %       of the cost function (computeCost) and gradient here.
         %
 
-        h_theta = theta(1) * X(:, 1) + theta(2) * X(:, 2);
+        h_theta = X * theta;
 
-        tmp1 = theta(1) - alpha * (1/m) * sum(h_theta - y);
-        tmp2 = theta(2) - alpha * (1/m) * sum((h_theta - y) .* X(:, 2));
-
-        theta = [tmp1; tmp2];
+        tmp = theta - alpha * (1/m) * (X' * (h_theta - y));
+        theta = tmp;
 
 
         % ============================================================

@@ -26,12 +26,12 @@ function [X_norm, mu, sigma] = featureNormalize(X)
 	% Hint: You might find the 'mean' and 'std' functions useful.
 	%
 
-	x1 = X(:, 1);
-	x2 = X(:, 2);
+	mu = mean(X);
+	sigma = std(X);
 
-	mu = [mean(x1); mean(x2)]
-	sigma = [std(x1); std(x2)]
-
+	for i = 1:size(X, 2)
+		X_norm(:, i) = (X(:, i) - mu(i)) / sigma(i);
+	end
 
 	% ============================================================
 

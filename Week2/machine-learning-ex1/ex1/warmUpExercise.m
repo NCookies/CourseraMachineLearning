@@ -9,7 +9,7 @@ function A = warmUpExercise()
 	%               represent the return values (at the top of the file)
 	%               and then set them accordingly. 
 
-	A =  zeros(5, 5);
+	A =  eye(5, 5);
 
 
 

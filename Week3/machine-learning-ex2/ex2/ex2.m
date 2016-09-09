@@ -31,7 +31,7 @@ X = data(:, [1, 2]); y = data(:, 3);
 %  the problem we are working with.
 
 fprintf(['Plotting data with + indicating (y = 1) examples and o ' ...
-         'indicating (y = 0) examples.\n']);
+         'indicating (y = 0) examples.\n']); 
 
 plotData(X, y);
 
@@ -61,7 +61,7 @@ pause;
 X = [ones(m, 1) X];
 
 % Initialize fitting parameters
-initial_theta = zeros(n + 1, 1);
+initial_theta = zeros(n + 1, 1)
 
 % Compute and display initial cost and gradient
 [cost, grad] = costFunction(initial_theta, X, y);
@@ -132,4 +132,3 @@ fprintf('Train Accuracy: %f\n', mean(double(p == y)) * 100);
 
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
-
